@@ -1,8 +1,8 @@
 import './ExpenseItem.css'
 function ExpenseItem(props) {
-    const expenseDate = new Date(2022, 7, 11);
-    const expenseTitle = 'Mercedes Benz E Class 300';
-    const expenseAmount = 203.92;
+    const year = props.date.getFullYear();
+    const month = props.date.toLocaleString('en-US', { month: 'long' });
+    const day = props.date.toLocaleString('en-US', { day: '2-digit' });
     return (
         <div>
             <h2>{props.title}</h2>
@@ -14,7 +14,11 @@ function ExpenseItem(props) {
                     <div>
                         <h4>Income</h4>
                         <p id="money-plus" className="money plus">+$0.00</p>
-                        <p>{props.date.toISOString()}</p>
+                        <p>
+                            <div>{year} </div>
+                            <div>{month} </div>
+                            <div>{day} </div>
+                        </p>
                     </div>
                     <div>
                         <h4>Expense</h4>
