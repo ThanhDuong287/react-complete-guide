@@ -10,9 +10,12 @@ function App() {
     { id: "m2", title: 'Mercedes Benz C Class 200 Exclusive', amount: 294.66, date: new Date(2022, 7, 11) },
     { id: "m3", title: 'Mercedes Benz S Class 450', amount: 1015.94, date: new Date(2022, 7, 11) },
   ];
+  const addExpenseHandler = (expenses) => {
+    console.log(expenses);
+  }
   return (
     <div className="App">
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
 
     </div>
